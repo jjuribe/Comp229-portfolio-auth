@@ -1,0 +1,104 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+   
+<!--main content -->
+    <main class= "container">
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to the  <%= title %> page </h1> 
+       
+      </div>
+
+    </main>
+
+    <!-- Carousel wrapper -->
+<div
+id="carouselMultiItemExample"
+class="carousel slide carousel-dark text-center"
+data-mdb-ride="carousel"
+>
+<!-- Controls -->
+<div class="d-flex justify-content-center mb-4">
+  <button
+    class="carousel-control-prev position-relative"
+    type="button"
+    data-mdb-target="#carouselMultiItemExample"
+    data-mdb-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next position-relative"
+    type="button"
+    data-mdb-target="#carouselMultiItemExample"
+    data-mdb-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Inner -->
+<div class="carousel-inner py-4">
+  <!-- Single item -->
+  <div class="carousel-item active">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card">
+            <img
+              src="/public/Assets/images/project1.png" width="150" height="150"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">C# Project</h5>
+              <p class="card-text">
+                Project of C#, working with dictionaries, collections, static methods, public methods, exceptions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-none d-lg-block">
+            <div class="card">
+              <img
+                src="/public/Assets/images/spider.png"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Data Extraction Using Scrapy</h5>
+                <p class="card-text">
+                  This is one of the spiders that i have wrote to extract data from websites. This will parse the information and export .csv files.
+                </p>
+                <a class="btn btn-primary" href="https://github.com/jjuribe/lanacion" role="button">Code </a>
+              </div>
+            </div>
+          </div>
+
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="card">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/aGVDqggOAww"></iframe>
+            <div class="card-body">
+              <h5 class="card-title">Oil well deep meter and fishing tool</h5>
+              <p class="card-text">
+                This project was developed working for Key Energy Services, this system helped to meassure the oil well deep, and also 
+                provide to the operator the capacity of fishing standing valves without the need of a 3rd party company. This system is equiped
+                with a MD TOTCO Load Cell and a Horner PLC XL7. The sensor was linearized using statistical linear regression.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+</div>
+<!-- Carousel wrapper -->
+    
+   
+    <%- include partials/bottom_nav.ejs %>
+    <%- include partials/footer.ejs %>
