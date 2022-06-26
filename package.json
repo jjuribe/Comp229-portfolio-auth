@@ -28,8 +28,12 @@
     "passport-mongoose": "^0.0.1",
     "popper.js": "^1.16.1"
   },
-  "description": "Portfolio Jose Uribe",
+  "description": "Portfolio Jose Uribe using Express, EJS, NodeJS, MongoDB, Passport, Passport-Local-Mongoose, Passport-Mongoose, Bootstrap, Popper.js, JQuery, and FontAwesome",
   "main": "server.js",
   "author": "Jose Uribe",
   "license": "ISC"
 }
+
+
+
+
