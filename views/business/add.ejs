@@ -1,0 +1,54 @@
+<% /* %>
+Jose Uribe
+Centennial College
+juribeco@my.centennialcollege.ca
+301236090
+COMP229
+June 2022
+<% */ %>
+
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/main_nav.ejs') %> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Business</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        .wrapper{
+            width: auto;
+            margin: auto auto;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Contact Name" name="name" required/>
+                </div>
+                <div class="form-group">
+                    <label for="numberTextField">Number</label>
+                    <input type="text" class="form-control" id="number" placeholder="Enter Contact number" name="number" required/>
+                </div>
+                <div class="form-group">
+                    <label for="emailTextField">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter E-mail Address" name="email" required/>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                    <a href="/business" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>    
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<%- include ('../partials/bottom_nav.ejs') %>
+<%- include ('../partials/footer.ejs') %>

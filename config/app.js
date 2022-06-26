@@ -7,13 +7,40 @@ COMP229
 June 2022
 */
 
-//3rd party modules
+// installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+//let cors = require('cors');
 
+// modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+
+//let passportJWT = require('passport-jwt');
+//let JWTStrategy = passportJWT.Strategy;
+//let ExtractJWT = passportJWT.ExtractJwt;
+
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
+
+// database connection
+let mongoose = require('mongoose');
+let DB = require('./db');
+
+// point to the database
+mongoose.connect(DB.URI, { useNewUrlParser: true , useUnifiedTopology: true});
+
+let mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'connection error:'));
+mongoDB.once('open', function() {
+  console.log('Connected to MongoDB');
+}
+);
 
 //routes
 let indexRouter = require('../routes/index');
@@ -32,6 +59,36 @@ let app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
+
+//setup express session
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+// initialize flash
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// create a User Model Instance
+let userModel = require('../models/user');
+let User = userModel.User;
+
+// implement a User Authentication Strategy
+passport.use(User.createStrategy());
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -44,6 +101,9 @@ app.use('/aboutme',aboutmeRouter);
 app.use('/services',servicesRouter);
 
 app.use('*/images',express.static('public/Assets/images'));
+
+
+
 
 
 

@@ -61,6 +61,33 @@ June 2022
             <% } %>
             <a class="nav-link " aria-current="page" href="/contact"><i class="fas fa-at"></i> Contact</a>
           </li>
+
+          <% if (title == "Business"){ %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+            <a class="nav-link " aria-current="page" href="/business"><i class="fas fa-building"></i> Business Contacts List</a>
+          </li>
+
+          <% if(typeof displayName == 'string' && displayName) { %>
+          <li class="nav-item active">
+            <a class="nav-link " aria-current="page" href="/business/add"><i class="fas fa-building"></i>Add Business</a>
+          </li>
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+            
+          
+          
+
+          <% if(typeof displayName == 'string' && displayName) { %>
+            <a href="/logout" class="btn btn-primary" role="button">
+            <i class="fas fa-sign-out-alt"></i> Logout</a>
+        <% } else { %>
+          <a href="/login" class="btn btn-primary" role="button">
+            <i class="fas fa-sign-in-alt"></i> Login</a>
+        <% } %>
                   
         </ul>
        

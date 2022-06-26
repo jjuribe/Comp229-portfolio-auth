@@ -1,9 +1,17 @@
-<%- include partials/header.ejs %>
-<%- include partials/main_nav.ejs %>
+<% /* %>
+Jose Uribe
+Centennial College
+juribeco@my.centennialcollege.ca
+301236090
+COMP229
+June 2022
+<% */ %>
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
 
 <h1><%= message %></h1>
 <h2><%= error.status %></h2>
 <pre><%= error.stack %></pre>
 
-<%- include partials/bottom_nav.ejs %>
-    <%- include partials/footer.ejs %>
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>
